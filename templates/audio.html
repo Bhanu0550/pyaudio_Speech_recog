@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Oswald:wght@500&display=swap" rel="stylesheet">
+<head>
+	<title>Sound Record & Play</title>
+</head>
+<style type="text/css">
+	body{
+        background: #70e1f5;
+        background: -webkit-linear-gradient(to left, #ffd194, #70e1f5);
+        background: linear-gradient(to left, #ffd194, #70e1f5); 
+      }
+      div {
+      height: 100px;
+      width: 200px;
+      border-style: double;
+      border-color: white;
+      }
+
+
+</style>
+<body>
+    <br><br>
+	<div class="container p-2" align="center">
+        <h5 align="center" style="font-family: Georgia, sans-serif;">Sound Record & Play</h5>
+        <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="button" style="float:left" onclick="window.location.href='{{ url_for( 'sound') }}';">Record</button>
+		<button class="btn aqua-gradient btn-rounded btn-sm my-0" type="button" style="float:right" onclick="window.location.href='{{ url_for( 'play_audio') }}';">Play</button><br><br>
+    </div><br><br>
+        <div class="container p-2">
+            <h5 align="center" style="font-family: Georgia, sans-serif;">Speech to text</h5>
+            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="button" style="align-items:center;" onclick="window.location.href='{{ url_for('speech_recog') }}';">Give-Speech
+            </button>
+            <button class="btn aqua-gradient btn-rounded btn-sm my-0" type="button" style="float:right" onclick="window.location.href='{{ url_for( 'view_text') }}';">View-text</button><br>
+        </div><br><br>
+        <div class="container p-2">
+
+              <p>  {% if text%}
+
+                    {{text}}
+
+                {% endif %} </p>
+        </div>
+        
+    
+</body>
+</html>
